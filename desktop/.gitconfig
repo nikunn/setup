@@ -5,3 +5,6 @@
   last = log -1
 [color]
 	ui = auto
+[user]
+	email = no@mail.com
+	name = Nikun
