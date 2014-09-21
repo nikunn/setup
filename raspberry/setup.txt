@@ -1,0 +1,26 @@
+sudo apt-get update
+sudo apt-get upgrade
+
+sudo apt-get install vim
+
+sudo apt-get install lua5.2
+sudo apt-get install liblua5.2
+sudo apt-get install liblua5.2-dev
+
+Download the source from http://industriousone.com/premake/download.
+  unzip premake-4.3-src.zip
+  cd ~/dev/premake-4.3/build/gmake.unix
+  make
+  sudo cp ~/dev/premake-4.3/bin/release/premake4 /usr/sbin
+
+sudo apt-get install gcc-4.8
+sudo apt-get install g++-4.8
+update symlink of gcc and g++
+sudo apt-get install colorgcc
+
+sudo apt-get install i2c-tools
+
+enable i2c and spi
+  sudo vim /etc/modprobe.d/raspi-blacklist.conf
+add the kernel module for i2c at boot
+  sudo vim /etc/modules
