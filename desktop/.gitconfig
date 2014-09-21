@@ -8,3 +8,5 @@
 [user]
 	email = no@mail.com
 	name = Nikun
+[core]
+	editor = vim
