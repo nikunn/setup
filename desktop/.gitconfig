@@ -1,1 +1,7 @@
-/home/zubilion/.gitconfig
+[alias]
+  us = status
+  ci = commit
+  di = diff
+  last = log -1
+[color]
+	ui = auto

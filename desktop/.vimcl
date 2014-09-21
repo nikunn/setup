@@ -1,1 +1,49 @@
-/home/zubilion/.vimcl
+" colors
+if match($TERMCAP, 'Co#256:') == 0 || match($TERMCAP, ':Co#256:') > 0
+set t_Co=256
+endif
+
+colorscheme default
+"set background=dark
+hi Comment ctermfg=178 cterm=NONE
+
+"hi Constant ctermfg=darkyellow
+hi String   ctermfg=166         cterm=NONE
+hi Number   ctermfg=white       cterm=bold
+hi Boolean  ctermfg=124         cterm=bold
+hi Float    ctermfg=white       cterm=bold
+
+hi Identifier   ctermfg=124        cterm=NONE
+hi Function     ctermfg=112        cterm=bold
+
+hi Statement ctermfg=155           cterm=bold
+"hi Conditional   ctermfg=100
+"hi Repeat        ctermfg=darkgreen
+"hi Label         ctermfg=darkgreen
+"hi Operator      ctermfg=darkgreen
+"hi KeyWord       ctermfg=darkgreen
+"hi Exception     ctermfg=darkgreen
+
+"hi PreProc ctermfg=red cterm=bold
+"hi Define       ctermfg=red      cterm=bold
+hi Include       ctermfg=190      cterm=bold
+hi Macro         ctermfg=160      cterm=bold
+hi PreCondit     ctermfg=160      cterm=bold
+
+hi Type            ctermfg=white    cterm=bold
+hi StorageClass    ctermfg=124      cterm=NONE
+hi Structure       ctermfg=28       cterm=bold
+"hi Typedef        ctermfg=red
+
+hi Special      ctermfg=124
+
+hi Search       ctermbg=161     ctermfg=White
+hi MatchParen   ctermbg=160     ctermfg=White
+hi Pmenu        ctermbg=Black   ctermfg=34      cterm=bold
+hi Cursor       ctermbg=124     ctermfg=White
+
+" you complete me colors
+highlight YcmErrorLine     ctermbg=52      ctermfg=White
+highlight YcmErrorSign     ctermbg=124     ctermfg=Black
+highlight YcmWarningLine   ctermbg=130     ctermfg=White
+highlight YcmWarningSign   ctermbg=166     ctermfg=White
