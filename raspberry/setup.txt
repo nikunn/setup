@@ -19,7 +19,6 @@ update symlink of gcc and g++
 sudo apt-get install colorgcc
 
 sudo apt-get install i2c-tools
-
 enable i2c and spi
   sudo vim /etc/modprobe.d/raspi-blacklist.conf
 add the kernel module for i2c at boot
