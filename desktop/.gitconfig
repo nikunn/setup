@@ -1,6 +1,7 @@
 [alias]
   us = status
   ci = commit
+  co = checkout
   di = diff
   last = log -1
 [color]
