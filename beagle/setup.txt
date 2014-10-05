@@ -1,0 +1,85 @@
+##################################### HOST #####################################
+# Tethered to PC IP 192.168.7.2
+
+# In .ssh/config add :
+Host bbb
+     HostName 192.168.7.2
+
+##################################### ROOT #####################################
+# Change root password
+passwd
+# Create a user
+adduser username
+# Change password
+passwd username
+# Create home dir
+mkdir /home/username
+chown username /home/username
+# add in sudoers file (take effect next login)
+sudo usermod -a -G sudo username
+
+##################################### BASIC ####################################
+# Bash as the default shell
+chsh -s /bin/bash
+
+#################################### UDPATE ####################################
+sudo apt-get update
+sudo apt-get upgrade
+
+##################################### TOOLS ####################################
+sudo apt-get install vim
+sudo apt-get install git
+
+##################################### WIFI #####################################
+# From https://learn.adafruit.com/setting-up-wifi-with-beaglebone-black/configuration
+# Disabling HDMI (for better reception on Wifi dongle)
+mkdir /mnt/boot
+mount /dev/mmcblk0p1 /mnt/boot
+vim /mnt/boot/uEnv.txt
+# Uncomment the line below ##Disable HDMI
+# Check the linux kernel is recent 3.8+
+uname -r
+
+# Install some driver, in some chosen directory
+ntpdate -b -s -u pool.ntp.org
+git clone https://github.com/adafruit/wifi-reset.git wifi
+cd wifi; sudo ./install.sh
+
+# Incase need to disable Wifi
+systemctl disable wifi-reset.service
+
+# Check the name of the wifi device (wlan1 for example)
+iwconfig
+
+# Setup the connections details by uncommenting the wifi example and filling in the right thing
+sudo vim /etc/network/interfaces
+
+# Check it is working
+sudo ifup wlan1
+sudo ifconfig wlan1
+ping adafruit.com
+
+###################################### LUA #####################################
+sudo apt-get install lua5.2
+sudo apt-get install liblua5.2
+sudo apt-get install liblua5.2-dev
+
+#################################### PREMAKE ###################################
+# Download the source from http://industriousone.com/premake/download.
+unzip premake-4.3-src.zip
+cd ~/dev/premake-4.3/build/gmake.unix
+make
+sudo cp ~/dev/premake-4.3/bin/release/premake4 /usr/sbin
+
+#################################### COMPIL ####################################
+sudo apt-get install gcc-4.8
+sudo apt-get install g++-4.8
+# Update symlink of gcc and g++
+sudo apt-get install colorgcc
+
+###################################### I2C #####################################
+sudo apt-get install i2c-tools
+# Enable i2c and spi
+sudo vim /etc/modprobe.d/raspi-blacklist.conf
+# Add the kernel module for i2c at boot
+sudo vim /etc/modules
