@@ -29,6 +29,7 @@ sudo apt-get upgrade
 ##################################### TOOLS ####################################
 sudo apt-get install vim
 sudo apt-get install git
+sudo apt-get install unzip
 
 ##################################### WIFI #####################################
 # From https://learn.adafruit.com/setting-up-wifi-with-beaglebone-black/configuration
@@ -68,18 +69,15 @@ sudo apt-get install liblua5.2-dev
 # Download the source from http://industriousone.com/premake/download.
 unzip premake-4.3-src.zip
 cd ~/dev/premake-4.3/build/gmake.unix
-make
+sudo make
 sudo cp ~/dev/premake-4.3/bin/release/premake4 /usr/sbin
 
 #################################### COMPIL ####################################
-sudo apt-get install gcc-4.8
-sudo apt-get install g++-4.8
+# 4.8 was not available at this time (oct 2014)
+sudo apt-get install gcc-4.7
+sudo apt-get install g++-4.7
 # Update symlink of gcc and g++
 sudo apt-get install colorgcc
 
 ###################################### I2C #####################################
 sudo apt-get install i2c-tools
-# Enable i2c and spi
-sudo vim /etc/modprobe.d/raspi-blacklist.conf
-# Add the kernel module for i2c at boot
-sudo vim /etc/modules
