@@ -1,0 +1,3 @@
+# Configure the UART for testing
+sudo stty -F /dev/ttyO1 raw
+sudo stty -F /dev/ttyO1 9600

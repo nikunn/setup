@@ -81,3 +81,8 @@ sudo apt-get install colorgcc
 
 ###################################### I2C #####################################
 sudo apt-get install i2c-tools
+
+##################################### DATE #####################################
+# Avoid recompiling everything because of wrong date
+find ./ -exec touch {} \+
+

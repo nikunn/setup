@@ -1,0 +1,21 @@
+# View descriptors
+# /sys/devices/bone_capemgr.9/slots
+  0: 54:PF---
+  1: 55:PF---
+  2: 56:PF---
+  3: 57:PF---
+  4: ff:P-O-L Bone-LT-eMMC-2G,00A0,Texas Instrument,BB-BONE-EMMC-2G
+  5: ff:P-O-- Bone-Black-HDMI,00A0,Texas Instrument,BB-BONELT-HDMI
+  6: ff:P-O-- Bone-Black-HDMIN,00A0,Texas Instrument,BB-BONELT-HDMIN
+
+# List all the pins with their address and mode
+# /sys/kernel/debug/pinctrl/44e10800.pinmux/pins
+  pin 0 (44e10800) 00000031 pinctrl-single
+
+# Apply the firmware as root (note that there is no extension and no version number)
+echo BB-UART1 > /sys/devices/bone_capemgr.9/slots # or $SLOTS if the variable has been exported
+
+# Enable the device at boot as root
+vim /boot/uboot/uEnv.txt
+# Find the line with optargs (There can be only one) and add the device to enable by appending
+capemgr.enable_partno=BB-UART1
