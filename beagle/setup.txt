@@ -69,7 +69,7 @@ sudo apt-get install liblua5.2-dev
 # Download the source from http://industriousone.com/premake/download.
 unzip premake-4.3-src.zip
 cd ~/dev/premake-4.3/build/gmake.unix
-sudo make
+make
 sudo cp ~/dev/premake-4.3/bin/release/premake4 /usr/sbin
 
 #################################### COMPIL ####################################

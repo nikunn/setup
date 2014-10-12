@@ -1,0 +1,14 @@
+# Get the I2C available bus
+sudo i2cdetect -l 
+
+# Get info about bus number 1
+sudo i2cdetect -F 1
+
+# Probing address on bus 3 (/dev/i2c-3)
+sudo i2cdetect -r 3
+
+# Probing the register on the device 0x40 on the bus 3
+sudo i2cdump 3 0x40
+
+# Get register 00 value of the device address 0x40 on bus 3
+sudo i2cget -y 3 0x40 00
