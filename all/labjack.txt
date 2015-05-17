@@ -1,0 +1,24 @@
+$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Debian
+Description:	Debian GNU/Linux 7.5 (wheezy)
+Release:	7.5
+Codename:	wheezy
+
+/usr/local/lib/libLabJackM.so: undefined reference to `memcpy@GLIBC_2.14'
+
+apt-cache policy libc6
+libc6:
+  Installed: 2.13-38+deb7u3
+  Candidate: 2.13-38+deb7u3
+  Version table:
+     2.19-7 0
+        650 http://http.us.debian.org/debian/ testing/main amd64 Packages
+ *** 2.13-38+deb7u3 0
+        700 http://security.debian.org/ wheezy/updates/main amd64 Packages
+        100 /var/lib/dpkg/status
+     2.13-38+deb7u2 0
+        700 http://cdn.debian.net/debian/ wheezy/main amd64 Packages
+
+
+http://www.win.tue.nl/~aeb/linux/misc/gcc-semibug.html

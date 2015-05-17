@@ -2,21 +2,9 @@ set nocompatible
 
 """""""""""""""""""""""""""""""""""" PLUGINS """""""""""""""""""""""""""""""""""
 filetype off
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" " alternatively, pass a path where Vundle should install plugins
-" "call vundle#begin('~/some/path/here')
-
-" " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Bundle 'Valloric/YouCompleteMe'
-
-" " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
 
 " pathogen
+filetype off
 execute pathogen#infect()
 
 " start nerd tree if no file selected
@@ -24,30 +12,23 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+" python mode
+call pathogen#helptags()
+let g:pymode_options_colorcolumn = 0
+let g:pymode_motion = 0
+
+
 """""""""""""""""""""""""""""""""""" SYNTAX """"""""""""""""""""""""""""""""""""
 syntax on
 filetype on
 filetype plugin on
+filetype plugin indent on
 
 """""""""""""""""""""""""""""""""" COMPLETION """"""""""""""""""""""""""""""""""
 set nocp
 set wildmenu
 set wildmode=list:longest,full
 set completeopt-=preview
-
-"YCM
-let g:ycm_min_num_of_chars_for_completion = 2
-"let g:ycm_auto_trigger = 0
-"let g:ycm_global_ycm_extra_conf = '/home/zubilion/Source/Project/.ycm_extra_conf.pyc'
-let g:ycm_filetype_whitelist = { 'cpp': 1, 'h': 1, 'hpp': 1 }
-let g:ycm_confirm_extra_conf = 0
-
-" few remap for YCM
-nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
-nnoremap <F1> :YcmCompleter GoToDefinition<CR>
-nnoremap <F2> :YcmCompleter GoToDeclaration<CR>
-nnoremap <F3> :YcmCompleter GoToImplementationElseDeclaration<CR>
-nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 
 """""""""""""""""""""""""""""""""" INDENTATION """""""""""""""""""""""""""""""""
 " indent 

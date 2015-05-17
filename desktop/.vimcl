@@ -43,7 +43,11 @@ hi Pmenu        ctermbg=Black   ctermfg=34      cterm=bold
 hi Cursor       ctermbg=124     ctermfg=White
 
 " you complete me colors
-highlight YcmErrorLine     ctermbg=52      ctermfg=White
-highlight YcmErrorSign     ctermbg=124     ctermfg=Black
-highlight YcmWarningLine   ctermbg=130     ctermfg=White
-highlight YcmWarningSign   ctermbg=166     ctermfg=White
+highlight YcmErrorLine     ctermbg=52   ctermfg=White
+highlight YcmErrorSign     ctermbg=88   ctermfg=White
+highlight YcmErrorSection  ctermbg=166  ctermfg=White
+
+highlight YcmWarningLine     ctermbg=58   ctermfg=White
+highlight YcmWarningSign     ctermbg=94   ctermfg=White
+highlight YcmWarningSection  ctermbg=172  ctermfg=White
+

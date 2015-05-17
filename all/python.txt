@@ -1,0 +1,52 @@
+VIRTUAL ENV
+  python to use :
+  #! /path/to/project/bin/python 
+  pip and setup to use :
+  /path/to/project/bin/pip
+
+
+NEW PROJECT
+  $ virtualenv -p /usr/bin/python3 project
+  $ source bin/activate
+  $ git init
+  $ mkdir tests project docs fixtures
+  $ touch tests/__init__.py
+  $ touch project/__init__.py
+  $ touch setup.py README.md LICENSE.txt .gitignore
+  $ pip freeze > requirements.txt
+
+  $ deactivate
+
+
+
+USELESS ASSIGN
+  If you need to assign something (for instance, in Unpacking) but will not need that variable, use __
+
+FORMAT
+  "{0} can be {1}".format("strings", "formatted")
+  "{name} wants to eat {food}".format(name="Bob", food="lasagna")
+
+
+CLASS
+  # An instance method. All methods take "self" as the first argument
+  def say(self, msg):
+  
+  # A class method is shared among all instances
+  # They are called with the calling class as the first argument
+  @classmethod
+      def get_species(cls):
+  
+  # A static method is called without a class or instance reference
+  @staticmethod
+      def grunt():
+
+
+IFMAIN
+  # code executed only if not imported
+  if __name__ == '__main__':
+
+
+FILE I/O
+with open('file.txt') as f:
+    for line in f:
+    print line
