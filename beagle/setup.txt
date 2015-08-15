@@ -81,3 +81,18 @@ sudo apt-get install colorgcc
 
 ###################################### I2C #####################################
 sudo apt-get install i2c-tools
+
+### change the bus frequency ###
+# backup device tree overlay
+cp /boot/uboot/dtbs/am335x-boneblack.dtb am335x-boneblack.dtb.orig
+# create dts file
+dtc -I dtb -O dts -o am335x-boneblack.dts am335x-boneblack.dtb.orig
+# modify clock-frequency = <61a80>; for i2c2: 0x4819C000 (bus 1)
+# create dtb file
+dtc -I dts -O dtb -o am335x-boneblack.dtb am335x-boneblack.dts
+# copy back to boot directory
+cp am335x-boneblack.dtb /boot/uboot/dtbs/ 
+
+
+
+

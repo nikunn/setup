@@ -1,0 +1,6 @@
+vim /etc/netowrk/interfaces
+/etc/init.d/networking restart
+/sbin/route add default gw 192.168.7.1
+
+ping 192.168.7.1
+ping 8.8.8.8
