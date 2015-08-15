@@ -6,7 +6,7 @@ export PINS=/sys/kernel/debug/pinctrl/44e10800.pinmux/pins
 alias ll='ls -l'
 
 function __premake(){
-    premake4 --file=premake.lua clean;
-      premake4 --file=premake.lua "$@" gmake;
+  premake4 --file=premake.lua clean;
+  premake4 --file=premake.lua "$@" gmake;
 }
 alias premake="__premake"

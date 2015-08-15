@@ -69,7 +69,7 @@ sudo apt-get install liblua5.2-dev
 # Download the source from http://industriousone.com/premake/download.
 unzip premake-4.3-src.zip
 cd ~/dev/premake-4.3/build/gmake.unix
-make
+sudo make
 sudo cp ~/dev/premake-4.3/bin/release/premake4 /usr/sbin
 
 #################################### COMPIL ####################################
@@ -79,10 +79,24 @@ sudo apt-get install g++-4.7
 # Update symlink of gcc and g++
 sudo apt-get install colorgcc
 
-###################################### I2C #####################################
-sudo apt-get install i2c-tools
-
 ##################################### DATE #####################################
 # Avoid recompiling everything because of wrong date
 find ./ -exec touch {} \+
+
+###################################### I2C #####################################
+sudo apt-get install i2c-tools
+
+### change the bus frequency ###
+# backup device tree overlay
+cp /boot/uboot/dtbs/am335x-boneblack.dtb am335x-boneblack.dtb.orig
+# create dts file
+dtc -I dtb -O dts -o am335x-boneblack.dts am335x-boneblack.dtb.orig
+# modify clock-frequency = <61a80>; for i2c2: 0x4819C000 (bus 1)
+# create dtb file
+dtc -I dts -O dtb -o am335x-boneblack.dtb am335x-boneblack.dts
+# copy back to boot directory
+cp am335x-boneblack.dtb /boot/uboot/dtbs/ 
+
+
+
 
