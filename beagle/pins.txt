@@ -1,0 +1,21 @@
+###################################### DIG #####################################
+# list of GPIO
+ll /sys/class/gpio
+# enable P9_15 GPIO_48 PIN_16 as root:
+(cd /sys/class/gpio; echo 48 > export)
+
+
+###################################### PWM #####################################
+# list of PWM
+ll /lib/firmware/*pwm*
+# enable pin 14
+sudo sh -c "echo bone_pwm_P9_14 > $SLOTS"
+sudo sh -c "echo am33xx_pwm >$SLOTS"
+# properties are in /sys/devices/ocp.3/pwm_test_P9_14.12
+
+###################################### SPI #####################################
+# in case http://elinux.org/BeagleBone_Black_Enable_SPIDEV
+ll /lib/firmware/*SPI*
+sudo sh -c "echo BB-SPIDEV0 > $SLOTS"
+# test -D device as option
+gcc spidev_test.c -o spidev_test

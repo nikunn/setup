@@ -98,5 +98,8 @@ dtc -I dts -O dtb -o am335x-boneblack.dtb am335x-boneblack.dts
 cp am335x-boneblack.dtb /boot/uboot/dtbs/ 
 
 
-
-
+###################################### ENV #####################################
+# to keep environment variable when sudo, as root type visudo and change the following
+Defaults        env_reset
+Defaults        env_keep += "SLOTS"
+Defaults        env_keep += "PINS"
