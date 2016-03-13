@@ -15,6 +15,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " python mode
 call pathogen#helptags()
 let g:pymode_options_colorcolumn = 0
+let g:pymode_folding = 0
 let g:pymode_motion = 0
 
 

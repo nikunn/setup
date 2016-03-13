@@ -1,0 +1,19 @@
+SOURCE ['~/Source/Python/project/lib/python3.4/site-packages/django']
+
+START
+  $ pip install Django                        ##install django in the virtual env (after activating it)##
+  $ django-admin startproject project_name
+  $ python manage.py migrate
+  $ python manage.py runserver IP:PORT
+  $ python manage.py startapp app_name
+  $ vim app_name/models.py                    ##to create the data model##
+  $ vim project_name/settings.py              ##to add the app in the INSTALLED_APPS##
+  $ python manage.py makemigrations app_name
+  $ python manage.py createsuperuser
+  $ vim app_name/admin.py                     ##to import model##
+  $ mkdir templates
+  $ vim project_name/settings.py              ##add DIRS option for templates##
+  $ vim app_name/views.py                     ##create views##
+  $ vim app_name/urls.py                      ##map url to view##
+  $ vim project_name/urls.py                  ##point to app url root##
+  $ app_name/templates/app_name/index.html    ##to create a template##
