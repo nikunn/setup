@@ -1,23 +1,6 @@
 set nocompatible
 
 """""""""""""""""""""""""""""""""""" PLUGINS """""""""""""""""""""""""""""""""""
-filetype off
-
-" pathogen
-filetype off
-execute pathogen#infect()
-
-" start nerd tree if no file selected
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" python mode
-call pathogen#helptags()
-let g:pymode_options_colorcolumn = 0
-let g:pymode_folding = 0
-let g:pymode_motion = 0
-
 
 """""""""""""""""""""""""""""""""""" SYNTAX """"""""""""""""""""""""""""""""""""
 syntax on
