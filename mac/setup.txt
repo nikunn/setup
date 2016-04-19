@@ -1,0 +1,3 @@
+FINK
+Acceptance of the Xcode license requires a writeable home directory or root authentication.
+  Use "sudo xcodebuild -license" and type "agree"
