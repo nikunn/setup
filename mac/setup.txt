@@ -1,3 +1,8 @@
 FINK
 Acceptance of the Xcode license requires a writeable home directory or root authentication.
   Use "sudo xcodebuild -license" and type "agree"
+
+USB BOOT
+hdiutil convert -format UDRW -o output_file input_file
+diskutil partitionDisk /dev/disk1 1 "Free Space" "unused" "100%"
+dd if=input_file of=/dev/disk1 bs=1m

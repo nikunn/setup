@@ -1,4 +1,6 @@
 #!/bin/bash
+trap "exit 1" TERM
+export TOP_PID=$$
 
 # function to exit script with error message
 ERROR_EXIT()
@@ -12,6 +14,6 @@ ERROR_EXIT()
   fi
 
   # exit with error code
-  exit 1
+  kill -s TERM $TOP_PID
 }
 
