@@ -4,7 +4,7 @@
 ls /Applications/ > $HOME/Documents/Nolife/Save/applications.txt
 
 # define the list of backup
-FLASH_LIST="MISO CORSAIR"
+FLASH_LIST="SANDO MISO CORSAIR"
 
 # go through all potentially connected flash
 for flash in $FLASH_LIST; do

@@ -1,0 +1,73 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+[keybindings]
+  broadcast_all = None
+  broadcast_group = None
+  broadcast_off = None
+  close_term = None
+  close_window = None
+  copy = None
+  cycle_next = None
+  cycle_prev = None
+  edit_window_title = None
+  go_down = <Super>Down
+  go_left = <Super>Left
+  go_next = None
+  go_prev = None
+  go_right = <Super>Right
+  go_up = <Super>Up
+  group_all = None
+  group_tab = None
+  help = None
+  hide_window = None
+  insert_number = None
+  insert_padded = None
+  layout_launcher = None
+  move_tab_left = <Super>Page_Up
+  move_tab_right = <Super>Page_Down
+  new_tab = <Super>n
+  new_terminator = None
+  new_window = None
+  next_profile = None
+  next_tab = <Super>Tab
+  paste = None
+  prev_tab = <Shift><Super>Tab
+  previous_profile = None
+  reset = None
+  reset_clear = None
+  resize_down = <Super>KP_2
+  resize_left = <Super>KP_4
+  resize_right = <Super>KP_6
+  resize_up = <Super>KP_8
+  rotate_ccw = None
+  rotate_cw = None
+  scaled_zoom = None
+  search = None
+  split_horiz = F9
+  split_vert = F10
+  toggle_scrollbar = None
+  toggle_zoom = <Super>grave
+  ungroup_all = None
+  ungroup_tab = None
+  zoom_in = None
+  zoom_normal = None
+  zoom_out = None
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_image = None
+    copy_on_selection = True
+    font = Monospace 11
+    foreground_color = "#ffffff"
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    use_system_font = False
+    word_chars = "-A-Za-z0-9,./?%&#:_@~"

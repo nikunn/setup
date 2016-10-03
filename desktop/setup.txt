@@ -1,34 +1,71 @@
-ERROR: Media change: please insert the disc labeled
-	vi /etc/apt/sources.list
-	comment the cdrom lines
+USER and GROUP
+	apt-get install sudo
+	visudo and then add line below root: _user_ ALL=(ALL) ALL
+	
+	sudo groupadd _group_
+	usermod -a -G _group_ _user_
 
-ERROR: is not in the sudoers file
-	adduser _USER_ sudo
 
-Virtual box addition
-	apt-get install build-essential module-assistant
-	m-a prepare
-	cd /media && mkdir vbox
-	sudo mount /dev/sr0 vbox
-	sudo ./VBoxLinuxAdditions.run
 
-INSTALL 
-- vim
-- git
-- lua
-- premake
-- avrdude avrdude-doc binutils-avr avr-libc gcc-avr gdb-avr
+INSTALL
+TOOLS
+	- aptitude
+	- terminator
+	- keychain
+	- gnome-do
+	- vim
+	- git
+	- lua
+	- premake4
+	- avrdude avrdude-doc binutils-avr avr-libc gcc-avr gdb-avr
+MEDIA
+	- vlc
+	- audacity
+	- handbrake
+	- pidgin
+	- gnumeric
+	- vuescan
+	- transmission
+	- salae logic https://www.saleae.com/downloads
+	- DVD decrypt http://download.videolan.org/pub/debian/stable/libdvdcss2_1.2.13-0_amd64.deb, then sudo dpkg -i package
 
+
+
+NFS
+sudo apt-get install samba smbclient cifs-utils
+create mount point: mkdir /mnt/_dir_
+create credential file: ~/.smbc ; with username=_user_ and password=_password_ ; careful on permissions here
+sudo vi /etc/fstab
+//_ip_/_dir_ /mnt/_dir_ cifs credentials=/home/_user_/.smbc,uid=_user_,gid=_group_,iocharset=utf8,sec=ntlm 0 0 
+
+
+
+PRINTER 7860DW
+http://support.brother.com/g/b/downloadend.aspx?c=us_ot&lang=en&prod=mfc7860dw_all&os=128&dlid=dlf006893_000&flang=4&type3=625&dlang=true
+install with whatever config
+static IP _ip_
+go to http://localhost:631/printers with linux credentials
+go to Maintenance->Modify Printer choose discoverable network printer and associated driver
+
+just in case:
+- http://support.brother.com/g/s/id/linux/en/instruction_prn3.html?c=us_ot&lang=en&comple=on&redirect=on
+- http://support.brother.com/g/s/id/linux/en/instruction_prn1a.html?c=us_ot&lang=en&comple=on&redirect=on
+
+
+
+VPN
+sudo apt-get install network-manager-openvpn network-manager-pptp \
+        network-manager-pptp-gnome network-manager-vpnc
+import existing VPN configuration
+manually set user and group password (shared secret)
+
+
+SKYPE
+https://wiki.debian.org/skype#Debian_9_.22Stretch.22
+careful to install i386 for libssl https://packages.debian.org/jessie/i386/libssl1.0.0/download
+and check section The installation instructions for Wheezy are not working for Jessie?
 
 REMOVE
 sudo apt-get remove --purge libreoffice*
 sudo apt-get clean
 sudo apt-get autoremove
-
-sudo apt-get remove tracker
-
-VIRTUAL BOX
-Mount VB Shared Folder
-  sudo mount -t vboxsf Shared ~/Shared/
-Enable symlink for VB shared folder
-  VBoxManage setextradata VM_NAME VBoxInternal2/SharedFoldersEnableSymlinksCreate/SHARE_NAME 1
